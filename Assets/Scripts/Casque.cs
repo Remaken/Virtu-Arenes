@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class Casque : MonoBehaviour
 {
+    public delegate void HelmetEvent();
+
+    public static event HelmetEvent HelmetWasTaken;
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
+            HelmetWasTaken?.Invoke();
         }
+
     }
 }
