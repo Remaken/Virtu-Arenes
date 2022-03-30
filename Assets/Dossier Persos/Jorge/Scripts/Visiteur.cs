@@ -17,7 +17,8 @@ public class Visiteur : MonoBehaviour
 { 
     public PlayerState state = PlayerState.None;
     public PlayerState nextState = PlayerState.None;
-    
+
+    public Torche TorchManager;
     [SerializeField] private float _moveSpeed = 5f;
     [SerializeField] private GameObject _rightHand;
     [SerializeField] private GameObject _leftHand;
@@ -116,7 +117,7 @@ public class Visiteur : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Torch"))
+        if (other.gameObject.CompareTag("Torche"))
         {
             _holdingTorch = true;
         }
@@ -124,12 +125,10 @@ public class Visiteur : MonoBehaviour
 
     private void HoldTorch()
     {
-        if (_holdingTorch==true)
-        {
-           Torche.torch
-        }
+        _holdingTorch = true; 
+        TorchManager.gameObject.transform.position = _leftHand.transform.position;
 
-        if (Input.GetKey(KeyCode.G))
+            if (Input.GetKey(KeyCode.G))
         {
             _holdingTorch = false;
         }
