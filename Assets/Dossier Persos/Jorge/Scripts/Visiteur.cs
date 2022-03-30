@@ -24,7 +24,7 @@ public class Visiteur : MonoBehaviour
     [SerializeField] private float _moveSpeed = 5f;
     public GameObject rightHand;
     public GameObject leftHand;
-    private bool _holdingTorch = false;
+    public bool holdingTorch = false;
 
     private void OnEnable()
     {
@@ -123,14 +123,12 @@ public class Visiteur : MonoBehaviour
 
     private void HoldTorch()
     {
-        _holdingTorch = true; 
-
+        holdingTorch = true;
     }
     private void CanDrop()
     {
-        if (Input.GetKey(KeyCode.G) && _holdingTorch)
+        if (Input.GetKey(KeyCode.G) && holdingTorch)
         {
-            _holdingTorch = false;
             TorchDrop?.Invoke();
         }
     }

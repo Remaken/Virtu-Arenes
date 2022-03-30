@@ -28,11 +28,9 @@ public class Torche : MonoBehaviour
 
     private void GiveTorch()
     {
-        if (_playerContact == true)
+        if (_playerContact == true && PlayerManager.holdingTorch == false)
         {
-            _playerContact = false;
             TorchHolding?.Invoke();
-            
             Visiteur.TorchDrop += TorchReset;
             gameObject.transform.position=PlayerManager.leftHand.transform.position;
             gameObject.transform.parent = PlayerManager.leftHand.transform;
@@ -41,6 +39,8 @@ public class Torche : MonoBehaviour
 
     private void TorchReset()
     {
+        PlayerManager.holdingTorch = false;
+        _playerContact = false;
         Destroy(this.gameObject);
     }
     private void OnDisable()
