@@ -12,7 +12,7 @@ public class Statue : MonoBehaviour
     private bool _plastronDetruit = false;
 
     
-    //  NOTE :  Element 0 = Plastron  | Element 1 = Casque  | Element 2 = Epee  |  Element 3 = Bouclier  des deux Tableaux
+    //  NOTE :  Element 0 = Plastron  | Element 1 = Casque  | Element 2 = Epee  |  Element 3 = Bouclier  
     private void OnEnable()
     {
         Bouclier.ShieldWasTaken += BouclierDetruit;
