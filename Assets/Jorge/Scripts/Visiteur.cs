@@ -19,8 +19,15 @@ public class Visiteur : MonoBehaviour
     public PlayerState nextState = PlayerState.None;
     
     [SerializeField] private float _moveSpeed = 5f;
-    
-    
+    [SerializeField] private GameObject _rightHand;
+    [SerializeField] private GameObject _leftHand;
+    private bool _holdingTorch = false;
+
+    private void OnEnable()
+    {
+        Torche.TorchHolding += HoldTorch;
+    }
+
     private void Start()
     {
         state = PlayerState.Walking;
@@ -106,5 +113,30 @@ public class Visiteur : MonoBehaviour
         this.transform.Translate(0f,0f,Input.GetAxis("Vertical")*_moveSpeed * Time.fixedDeltaTime);
         this.transform.Rotate(new Vector3(0f, Input.GetAxis("Horizontal")*_moveSpeed*10f*Time.fixedDeltaTime, 0f));
     }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Torch"))
+        {
+            _holdingTorch = true;
+        }
+    }
+
+    private void HoldTorch()
+    {
+        if (_holdingTorch==true)
+        {
+           Torche.torch
+        }
+
+        if (Input.GetKey(KeyCode.G))
+        {
+            _holdingTorch = false;
+        }
+    }
     
+    private void OnDisable()
+    {
+        Torche.TorchHolding -= HoldTorch;
+    }
 }
