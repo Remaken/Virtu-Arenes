@@ -5044,6 +5044,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerManager: {fileID: 0}
+  Combustible: {fileID: 868737943114558809}
+  Lumiere: {fileID: 6509052871172655998}
 --- !u!65 &2206703837810889541
 BoxCollider:
   m_ObjectHideFlags: 0

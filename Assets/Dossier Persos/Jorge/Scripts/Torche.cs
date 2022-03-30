@@ -10,8 +10,15 @@ public class Torche : MonoBehaviour
     public static event TorchEvent TorchHolding;
     private bool _playerContact=false;
     [SerializeField] private Visiteur PlayerManager;
+    [SerializeField] private GameObject Combustible;
+    [SerializeField] private GameObject Lumiere;
+    
+    private Vector3 _positionActuelleJoueur;
 
-
+    /*private void OnEnable()
+    {
+        Visiteur.TorchDrop += PlayerPos;
+    }*/
 
     private void Update()
     {
@@ -34,17 +41,32 @@ public class Torche : MonoBehaviour
             Visiteur.TorchDrop += TorchReset;
             gameObject.transform.position=PlayerManager.leftHand.transform.position;
             gameObject.transform.parent = PlayerManager.leftHand.transform;
+            
+            StartCoroutine(TorchLifeSpan());
         }
     }
 
+    IEnumerator TorchLifeSpan()
+    {
+        yield return new WaitForSeconds(15f);
+        Lumiere.SetActive(false);
+        Combustible.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
+        Combustible.GetComponent<MeshRenderer>().material.SetColor("_Color", Color.black);
+    }
+    /*private void PlayerPos()
+    {
+        _positionActuelleJoueur = PlayerManager.transform.position;
+    }*/
     private void TorchReset()
     {
         PlayerManager.holdingTorch = false;
         _playerContact = false;
+       // gameObject.transform.position = _positionActuelleJoueur;
         Destroy(this.gameObject);
     }
     private void OnDisable()
     {
         Visiteur.TorchDrop -= TorchReset;
+        //Visiteur.TorchDrop -= PlayerPos;
     }
 }

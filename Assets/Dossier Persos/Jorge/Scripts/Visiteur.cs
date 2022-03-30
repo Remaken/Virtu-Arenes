@@ -24,6 +24,7 @@ public class Visiteur : MonoBehaviour
     [SerializeField] private float _moveSpeed = 5f;
     public GameObject rightHand;
     public GameObject leftHand;
+    public GameObject dropZone;
     public bool holdingTorch = false;
 
     private void OnEnable()
