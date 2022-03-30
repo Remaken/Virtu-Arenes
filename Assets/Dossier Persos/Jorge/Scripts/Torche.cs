@@ -8,9 +8,10 @@ public class Torche : MonoBehaviour
     public delegate void TorchEvent();
 
     public static event TorchEvent TorchHolding;
-   [SerializeField] private GameObject Torch;
     private bool _playerContact=false;
-    
+    [SerializeField] private Visiteur PlayerManager;
+
+
 
     private void Update()
     {
@@ -19,18 +20,31 @@ public class Torche : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && _playerContact == false)
         {
             _playerContact = true;
         }
     }
 
-    public GameObject GiveTorch()
+    private void GiveTorch()
     {
-        if (_playerContact==true)
+        if (_playerContact == true)
         {
+            _playerContact = false;
             TorchHolding?.Invoke();
+            
+            Visiteur.TorchDrop += TorchReset;
+            gameObject.transform.position=PlayerManager.leftHand.transform.position;
+            gameObject.transform.parent = PlayerManager.leftHand.transform;
         }
-        return Torch;
+    }
+
+    private void TorchReset()
+    {
+        Destroy(this.gameObject);
+    }
+    private void OnDisable()
+    {
+        Visiteur.TorchDrop -= TorchReset;
     }
 }

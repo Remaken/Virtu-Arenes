@@ -15,13 +15,15 @@ public enum PlayerState
 }
 public class Visiteur : MonoBehaviour
 { 
+    public delegate void TorchDropEvent();
+
+    public static event TorchDropEvent TorchDrop;
     public PlayerState state = PlayerState.None;
     public PlayerState nextState = PlayerState.None;
 
-    public Torche TorchManager;
     [SerializeField] private float _moveSpeed = 5f;
-    [SerializeField] private GameObject _rightHand;
-    [SerializeField] private GameObject _leftHand;
+    public GameObject rightHand;
+    public GameObject leftHand;
     private bool _holdingTorch = false;
 
     private void OnEnable()
@@ -41,8 +43,12 @@ public class Visiteur : MonoBehaviour
             TransitionOrChangeState();
         }
         StateBehaviour();
+        CanDrop();
     }
-    private void FixedUpdate()
+
+  
+
+   private void FixedUpdate()
     {
         PlayerMouvement();
     }
@@ -115,22 +121,17 @@ public class Visiteur : MonoBehaviour
         this.transform.Rotate(new Vector3(0f, Input.GetAxis("Horizontal")*_moveSpeed*10f*Time.fixedDeltaTime, 0f));
     }
 
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.CompareTag("Torche"))
-        {
-            _holdingTorch = true;
-        }
-    }
-
     private void HoldTorch()
     {
         _holdingTorch = true; 
-        TorchManager.gameObject.transform.position = _leftHand.transform.position;
 
-            if (Input.GetKey(KeyCode.G))
+    }
+    private void CanDrop()
+    {
+        if (Input.GetKey(KeyCode.G) && _holdingTorch)
         {
             _holdingTorch = false;
+            TorchDrop?.Invoke();
         }
     }
     
