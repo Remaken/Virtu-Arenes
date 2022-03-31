@@ -12,6 +12,7 @@ public class Torche : MonoBehaviour
     [SerializeField] private Visiteur PlayerManager;
     [SerializeField] private GameObject Combustible;
     [SerializeField] private GameObject Lumiere;
+    [SerializeField] private GameObject Eteint;
     
     private Vector3 _positionActuelleJoueur;
 
@@ -29,21 +30,24 @@ public class Torche : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && _playerContact == false)
         {
-            _playerContact = true;
+            if (PlayerManager.holdingTorch == false)
+            {
+                _playerContact = true;
+            }
         }
     }
 
     private void GiveTorch()
     {
-        if (_playerContact == true && PlayerManager.holdingTorch == false)
+        if (_playerContact == true && PlayerManager.holdingTorch == false)  
         {
-            TorchHolding?.Invoke();
-            Visiteur.TorchDrop += TorchReset;
-            gameObject.transform.position=PlayerManager.leftHand.transform.position;
-            gameObject.transform.parent = PlayerManager.leftHand.transform;
-            
-            StartCoroutine(TorchLifeSpan());
+                TorchHolding?.Invoke();
+                Visiteur.TorchDrop += TorchReset;
+                gameObject.transform.position=PlayerManager.leftHand.transform.position;
+                gameObject.transform.parent = PlayerManager.leftHand.transform;
+                StartCoroutine(TorchLifeSpan());
         }
+       
     }
 
     IEnumerator TorchLifeSpan()
@@ -52,17 +56,20 @@ public class Torche : MonoBehaviour
         Lumiere.SetActive(false);
         Combustible.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
         Combustible.GetComponent<MeshRenderer>().material.SetColor("_Color", Color.black);
+        Eteint.SetActive(true);
     }
+    
     /*private void PlayerPos()
     {
         _positionActuelleJoueur = PlayerManager.transform.position;
     }*/
+    
     private void TorchReset()
     {
-        PlayerManager.holdingTorch = false;
-        _playerContact = false;
-       // gameObject.transform.position = _positionActuelleJoueur;
-        Destroy(this.gameObject);
+            PlayerManager.holdingTorch = false;
+            _playerContact = false;
+            Destroy(this.gameObject);
+        
     }
     private void OnDisable()
     {

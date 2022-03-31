@@ -10,6 +10,7 @@ public class Statue : MonoBehaviour
     private bool _bouclierDetruit = false;
     private bool _casqueDetruit = false;
     private bool _plastronDetruit = false;
+    private int _piécesPlacées = 0;
 
     
     //  NOTE :  Element 0 = Plastron  | Element 1 = Casque  | Element 2 = Epee  |  Element 3 = Bouclier  
@@ -19,6 +20,11 @@ public class Statue : MonoBehaviour
         Casque.HelmetWasTaken += CasqueDetruit;
         Epee.SwordWasTaken += EpeeDetruite;
         Plastron.BreastPlateWasTaken += PlastronDetruit;
+    }
+
+    private void Update()
+    {
+        StatueComplete();
     }
 
     private void OnCollisionEnter(Collision other)
@@ -36,6 +42,7 @@ public class Statue : MonoBehaviour
     {
         if (_bouclierDetruit==true)
         {
+            _piécesPlacées++;
             equipements[3].SetActive(true);
         }
     }
@@ -43,6 +50,7 @@ public class Statue : MonoBehaviour
     {
         if (_epeeDetruite==true)
         {
+            _piécesPlacées++;
             equipements[2].SetActive(true);
         }
     }
@@ -50,6 +58,7 @@ public class Statue : MonoBehaviour
     {
         if (_plastronDetruit==true)
         {
+            _piécesPlacées++;
             equipements[0].SetActive(true);
         }
     }
@@ -57,6 +66,7 @@ public class Statue : MonoBehaviour
     {
         if (_casqueDetruit==true)
         {
+            _piécesPlacées++;
             equipements[1].SetActive(true);
         }
     }
@@ -77,7 +87,14 @@ public class Statue : MonoBehaviour
     {
         _casqueDetruit = true;
     }
-    
+
+    private void StatueComplete()
+    {
+        if (_piécesPlacées>=4)
+        {
+            print("baboushka");
+        }
+    }
     private void OnDisable()
     {
         Bouclier.ShieldWasTaken -= BouclierDetruit;

@@ -131,6 +131,7 @@ public class Visiteur : MonoBehaviour
         if (Input.GetKey(KeyCode.G) && holdingTorch)
         {
             TorchDrop?.Invoke();
+            holdingTorch = false;
         }
     }
     
