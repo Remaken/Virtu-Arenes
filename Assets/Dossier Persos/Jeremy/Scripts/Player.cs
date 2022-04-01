@@ -7,12 +7,15 @@ public class Player : MonoBehaviour
 {
     
         public Rigidbody rb;
-    
+        
         public int speedMoves = 0;
         public int speedRotation = 0;
         
-        public delegate void TestAction();
+        public delegate void TestAction(); 
         public static event TestAction Up;
+        
+        public delegate void TestLMB();
+        public static event TestLMB Click;
 
         private void FixedUpdate()
         {
@@ -29,10 +32,19 @@ public class Player : MonoBehaviour
             if (Input.GetMouseButtonDown(1))
             {
                 Up?.Invoke();
+                
             }
+            
+            if (Input.GetMouseButtonDown(0))
+            {
+                
+                Click?.Invoke();
+                Debug.Log("Test Button (0)");
+            }
+            
+            
         }
         
-        
-        
+       
         
 }
