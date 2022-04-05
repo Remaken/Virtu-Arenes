@@ -44,32 +44,51 @@ public class Statue : MonoBehaviour
     {
         if (_bouclierDetruit==true)
         {
-            _piecesPlaces++;
+            _bouclierDetruit = false;
             equipements[3].SetActive(true);
+            
+            if (_bouclierDetruit==false)
+            {
+                _piecesPlaces++;
+            }
         }
     }
     private void  PlacementEpee()
     {
         if (_epeeDetruite==true)
         {
-            _piecesPlaces++;
+            _epeeDetruite = false;
             equipements[2].SetActive(true);
+            
+            if (_epeeDetruite==false)
+            {
+                _piecesPlaces++;
+            }
         }
     }
     private void PlacementPlastron()
     {
         if (_plastronDetruit==true)
         {
-            _piecesPlaces++;
+            _plastronDetruit = false;
             equipements[0].SetActive(true);
+            
+            if (_plastronDetruit==false)
+            {
+                _piecesPlaces++;
+            }
         }
     }
     private void  PlacementCasque()
     {
         if (_casqueDetruit==true)
         {
-            _piecesPlaces++;
+            _casqueDetruit = false;
             equipements[1].SetActive(true);
+            if (_casqueDetruit==false)
+            {
+                _piecesPlaces++;
+            }
         }
     }
     

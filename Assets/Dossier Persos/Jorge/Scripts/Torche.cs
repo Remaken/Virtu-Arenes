@@ -11,7 +11,7 @@ public class Torche : MonoBehaviour
     private bool _playerContact=false;
     [SerializeField] private Visiteur PlayerManager;
     [SerializeField] private GameObject Combustible;
-    [SerializeField] private GameObject Lumiere;
+    [SerializeField] protected GameObject Lumiere;
     [SerializeField] private GameObject Eteint;
     
     private Vector3 _positionActuelleJoueur;
