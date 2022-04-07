@@ -105,7 +105,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2408784251214805567}
   - component: {fileID: 1025141113161361641}
-  - component: {fileID: 4044598249481053806}
   m_Layer: 0
   m_Name: Bouclier
   m_TagString: Bouclier
@@ -142,18 +141,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9549904, y: 1.7954719, z: 0.30593416}
   m_Center: {x: -0.0060708523, y: -0.0039902925, z: 0.010444055}
---- !u!114 &4044598249481053806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4818822990968784492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b05f8d351325cfc4cbab9a1fb7edc4ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &4665165046518446338
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1600739430808289063}
   - component: {fileID: 7953805550643598160}
-  - component: {fileID: 2515368857710441296}
   m_Layer: 0
   m_Name: Casque
   m_TagString: Casque
@@ -46,18 +45,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.7579825, y: 0.72503257, z: 0.6850508}
   m_Center: {x: -0.010758877, y: -0.017526984, z: 0.005583495}
---- !u!114 &2515368857710441296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2357651326512695971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4429456118804945ab16b784541d6e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8124282947767298429
 GameObject:
   m_ObjectHideFlags: 0
@@ -86,7 +73,7 @@ Transform:
   m_GameObject: {fileID: 8124282947767298429}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.54699, y: 0.546839, z: 0.38053417}
+  m_LocalScale: {x: 2.2830567, y: 0.31037703, z: 0.8195533}
   m_Children: []
   m_Father: {fileID: 1600739430808289063}
   m_RootOrder: 0

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7987740626606235475}
   - component: {fileID: 8865368555920894683}
-  - component: {fileID: 5057949169461679188}
   m_Layer: 0
   m_Name: Plastron
   m_TagString: Plastron
@@ -46,18 +45,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.934703, y: 1.4068274, z: 0.81024396}
   m_Center: {x: 0.003153786, y: -0.119724154, z: -0.019897401}
---- !u!114 &5057949169461679188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1237089935295095780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98acc234d1a48e743a9d43a6eda086d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4988573432359443840
 GameObject:
   m_ObjectHideFlags: 0

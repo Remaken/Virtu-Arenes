@@ -233,7 +233,6 @@ GameObject:
   m_Component:
   - component: {fileID: 298131850559083730}
   - component: {fileID: 8632092490842264819}
-  - component: {fileID: 7915088650224775436}
   m_Layer: 0
   m_Name: Epee
   m_TagString: Epee
@@ -269,15 +268,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.32611394, y: 3.5826595, z: 0.4414279}
   m_Center: {x: 0.018968582, y: -0.4521593, z: 0.013177097}
---- !u!114 &7915088650224775436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7253619340616485929}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b156e58ce37b4e140a1fdd5ba73563c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

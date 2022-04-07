@@ -37,9 +37,17 @@ public class Torche : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            _playerContact = false;
+        }
+    }
+
     private void GiveTorch()
     {
-        if (_playerContact == true && PlayerManager.holdingTorch == false)  
+        if (_playerContact == true && PlayerManager.holdingTorch == false && PlayerManager.leftHandOcupied==false)
         {
                 TorchHolding?.Invoke();
                 Visiteur.TorchDrop += TorchReset;

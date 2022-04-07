@@ -53,7 +53,7 @@ public class Door : MonoBehaviour
             }
         }
 
-        if (triggerID == porteID && StatueManager.statueComplete == true && numeroPorte==3)
+        if (triggerID == porteID && StatueManager.statueCompleted == true && numeroPorte==3)
             _doorOpened = true;
     }
 
