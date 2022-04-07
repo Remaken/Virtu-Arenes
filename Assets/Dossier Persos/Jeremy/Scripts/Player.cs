@@ -11,12 +11,12 @@ public class Player : MonoBehaviour
         public int speedMoves = 0;
         public int speedRotation = 0;
         
-        public delegate void TestAction(); 
-        public static event TestAction Up;
+        public delegate void TestRMB(); 
+        public static event TestRMB RMB;
         
         public delegate void TestLMB();
-        public static event TestLMB Click;
-
+        public static event TestLMB LMB;
+        
         private void FixedUpdate()
         {
             float translation = Input.GetAxis("Vertical") * speedMoves * Time.deltaTime;
@@ -29,22 +29,20 @@ public class Player : MonoBehaviour
         
         private void Update()
         {
-            if (Input.GetMouseButtonDown(1))
-            {
-                Up?.Invoke();
-                
-            }
             
             if (Input.GetMouseButtonDown(0))
             {
+                LMB?.Invoke();
                 
-                Click?.Invoke();
-                Debug.Log("Test Button (0)");
             }
             
+            if (Input.GetMouseButtonDown(1))
+            {
+                RMB?.Invoke();
+                
+            }
             
         }
         
-       
         
 }
