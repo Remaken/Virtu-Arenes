@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    
+
+        public Actions _actions;
         public Rigidbody rb;
         
         public int speedMoves = 0;
@@ -16,6 +17,9 @@ public class Player : MonoBehaviour
         
         public delegate void TestLMB();
         public static event TestLMB LMB;
+        
+        public delegate void BouclierEvent();
+        public static event BouclierEvent Be;
         
         private void FixedUpdate()
         {
@@ -40,6 +44,18 @@ public class Player : MonoBehaviour
             {
                 RMB?.Invoke();
                 
+            }
+
+            if (_actions.isShieldEquiped == true)
+            {
+                Be?.Invoke();
+
+                if (Input.GetKeyDown(KeyCode.T))
+                {
+                    _actions.isShieldEquiped = false;
+                    _actions.shield.GetComponent<Rigidbody>().useGravity = true;
+                    Debug.Log("Shield dropped");
+                }
             }
             
         }

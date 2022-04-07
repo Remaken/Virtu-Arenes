@@ -7,17 +7,23 @@ public class Actions : MonoBehaviour
 {
     public GameObject shield;
     public GameObject player;
+    public GameObject rightForeArm;
+    public bool isShieldEquiped = false;
+    
+        
         private void OnEnable()
         {
             Player.LMB += LeftMouseAction;
             Player.RMB += RightMouseAction;
-            
+            Player.Be += ShieldEquiped;
+
         }
             
         private void OnDisable()
         {
             Player.LMB -= LeftMouseAction;
             Player.RMB -= RightMouseAction;
+            Player.Be -= ShieldEquiped;
             
         }
         
@@ -29,13 +35,14 @@ public class Actions : MonoBehaviour
             
             if (Physics.Raycast(ray, out hit))  //verifie si le raycast traverse quelque chose
             {
-                Debug.Log("Event LMB");
+                //Debug.Log("Event LMB");
                 Debug.DrawRay(transform.position,Vector3.forward, Color.green, 10);
 
                 if (hit.collider.gameObject.CompareTag("Bouclier"))
                 {
                     shield.transform.position = player.transform.position + new Vector3(1,0,0);
-                    Debug.Log("Bouclier acquis !!!!");
+                    isShieldEquiped = true;
+                    Debug.Log("Shield taken !!!!");
                 }
                 
             }
@@ -44,12 +51,17 @@ public class Actions : MonoBehaviour
         
         private void RightMouseAction()
         {
-            Debug.Log("Event RMB");
+            //Debug.Log("Event RMB");
         }
 
-        private void ShieldEquiped()
+        public void ShieldEquiped()
         {
-            //shield.transform.position = player.transform.position + new Vector3(1,0,0);
+            shield.transform.position = rightForeArm.transform.position + new Vector3(0,0,1);
+            shield.transform.rotation = rightForeArm.transform.rotation;
+            shield.transform.rotation = Quaternion.Euler(0f,180f,0);
+            
+            isShieldEquiped = true;
+            shield.GetComponent<Rigidbody>().useGravity = false;
         }
 
 }
