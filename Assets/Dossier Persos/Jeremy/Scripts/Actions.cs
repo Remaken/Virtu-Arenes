@@ -30,12 +30,12 @@ public class Actions : MonoBehaviour
         private void LeftMouseAction()
         {
             RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); //créer un rayon à partir de la camera principale jusqu'à la position du curseur dans le 3D world
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); //créer un rayon à partir de la camera principale
+                                                                         //jusqu'à la position du curseur dans le 3D world
             
             
             if (Physics.Raycast(ray, out hit))  //verifie si le raycast traverse quelque chose
             {
-                //Debug.Log("Event LMB");
                 Debug.DrawRay(transform.position,Vector3.forward, Color.green, 10);
 
                 if (hit.collider.gameObject.CompareTag("Bouclier"))
