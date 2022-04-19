@@ -5,22 +5,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
-        public Actions _actions;
-        public Rigidbody rb;
-        
         public int speedMoves = 0;
         public int speedRotation = 0;
-        
-        public delegate void TestRMB(); 
-        public static event TestRMB RMB;
-        
-        public delegate void TestLMB();
-        public static event TestLMB LMB;
-        
-        public delegate void BouclierEvent();
-        public static event BouclierEvent Be;
-        
+
         private void FixedUpdate()
         {
             float translation = Input.GetAxis("Vertical") * speedMoves * Time.deltaTime;
@@ -31,34 +18,7 @@ public class Player : MonoBehaviour
             
         }
         
-        private void Update()
-        {
-            
-            if (Input.GetMouseButtonDown(0))
-            {
-                LMB?.Invoke();
-                
-            }
-            
-            if (Input.GetMouseButtonDown(1))
-            {
-                RMB?.Invoke();
-                
-            }
-
-            if (_actions.isShieldEquiped == true)
-            {
-                Be?.Invoke();
-
-                if (Input.GetKeyDown(KeyCode.T))
-                {
-                    _actions.isShieldEquiped = false;
-                    _actions.shield.GetComponent<Rigidbody>().useGravity = true;
-                    Debug.Log("Shield dropped");
-                }
-            }
-            
-        }
+        
         
         
 }

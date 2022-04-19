@@ -13,17 +13,18 @@ public class Actions : MonoBehaviour
         
         private void OnEnable()
         {
-            Player.LMB += LeftMouseAction;
-            Player.RMB += RightMouseAction;
-            Player.Be += ShieldEquiped;
+            Event_List.LMB += LeftMouseAction;
+            Event_List.RMB += RightMouseAction;
+            Event_List.BE += ShieldEquiped;
+            //Event_List.USE += UseLever;
 
         }
             
         private void OnDisable()
         {
-            Player.LMB -= LeftMouseAction;
-            Player.RMB -= RightMouseAction;
-            Player.Be -= ShieldEquiped;
+            Event_List.LMB -= LeftMouseAction;
+            Event_List.RMB -= RightMouseAction;
+            Event_List.BE -= ShieldEquiped;
             
         }
         
@@ -63,5 +64,11 @@ public class Actions : MonoBehaviour
             isShieldEquiped = true;
             shield.GetComponent<Rigidbody>().useGravity = false;
         }
+
+        /*public void UseLever()
+        {
+            
+        }*/
+        
 
 }
