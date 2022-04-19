@@ -10,7 +10,7 @@ public class Door : MonoBehaviour
     public Statue StatueManager;
     [SerializeField] private int porteID;
     private int numeroPorte=0;
-    private bool _doorOpened = false;
+    private bool _eventDoorOpened = false;
     private void OnEnable()
     {
         EventManager.DoorOpenEvent += OpenDoor;
@@ -23,7 +23,7 @@ public class Door : MonoBehaviour
 
     private void DoorMovement()
     {
-        if (_doorOpened == true)
+        if (_eventDoorOpened == true)
         {
                 porte.transform.position = Vector3.MoveTowards(porte.transform.position, moveHere.position,2*Time.deltaTime);
         }
@@ -34,27 +34,28 @@ public class Door : MonoBehaviour
         numeroPorte = porteID;
         if (triggerID == porteID && numeroPorte==0)
         {
-            _doorOpened = true;
+            _eventDoorOpened = true;
         }
 
         if(triggerID == porteID && numeroPorte == 1)
         {
-            if ((StatueManager.equipements[0].activeSelf==true))
+            porte.transform.rotation = Quaternion.RotateTowards(porte.transform.rotation, moveHere.rotation,180);
+            /*if ((StatueManager.equipements[0].activeSelf==true))
             {
-                _doorOpened = true;
-            }
+               _eventDoorOpened = true; 
+            }*/
         }
         
         if (triggerID == porteID && numeroPorte == 2)
         {
             if ((StatueManager.equipements[1].activeSelf==true))
             {
-                _doorOpened = true;
+                _eventDoorOpened = true;
             }
         }
 
-        if (triggerID == porteID && StatueManager.statueCompleted == true && numeroPorte==3)
-            _doorOpened = true;
+        if (triggerID == porteID && StatueManager.statueCompleted == true && numeroPorte==4)
+            _eventDoorOpened = true;
     }
 
     private void OnDisable()
