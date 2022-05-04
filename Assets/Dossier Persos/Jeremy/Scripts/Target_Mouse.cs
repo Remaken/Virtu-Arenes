@@ -18,7 +18,7 @@ public class Target_Mouse : MonoBehaviour
         {
             _renderer.material.color = Color.red;
             pointedObject.text = gameObject.name;
-             
+            
 
         }
 
