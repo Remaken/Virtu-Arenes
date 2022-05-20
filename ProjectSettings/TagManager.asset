@@ -9,6 +9,8 @@ TagManager:
   - Casque
   - Plastron
   - Torche
+  - LeverTrigger
+  - Poignee
   layers:
   - Default
   - TransparentFX
