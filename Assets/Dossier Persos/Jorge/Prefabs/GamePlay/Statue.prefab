@@ -217,7 +217,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 1.043, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1653142913668884677}
+  - {fileID: 4026877848127913504}
   m_Father: {fileID: 1093519530964120562}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1050,9 +1050,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   equipements:
   - {fileID: 8816960829687941065}
-  - {fileID: 2341823275358575937}
+  - {fileID: 102649810342955940}
   - {fileID: 3476698781165422602}
   - {fileID: 2648026160810686709}
+  statueCompleted: 0
 --- !u!65 &2681801311760243549
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1161,7 +1162,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1001 &56256234796996578
+--- !u!1001 &2437749317696766215
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1174,35 +1175,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1600739430808289063, guid: 5a2fed211c5e56144aaa4dc696735b26, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.22
       objectReference: {fileID: 0}
     - target: {fileID: 1600739430808289063, guid: 5a2fed211c5e56144aaa4dc696735b26, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.05
       objectReference: {fileID: 0}
     - target: {fileID: 1600739430808289063, guid: 5a2fed211c5e56144aaa4dc696735b26, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 1600739430808289063, guid: 5a2fed211c5e56144aaa4dc696735b26, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9979616
       objectReference: {fileID: 0}
     - target: {fileID: 1600739430808289063, guid: 5a2fed211c5e56144aaa4dc696735b26, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.06381737
       objectReference: {fileID: 0}
     - target: {fileID: 1600739430808289063, guid: 5a2fed211c5e56144aaa4dc696735b26, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1600739430808289063, guid: 5a2fed211c5e56144aaa4dc696735b26, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1600739430808289063, guid: 5a2fed211c5e56144aaa4dc696735b26, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -7.318
       objectReference: {fileID: 0}
     - target: {fileID: 1600739430808289063, guid: 5a2fed211c5e56144aaa4dc696735b26, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -1216,25 +1217,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Casque
       objectReference: {fileID: 0}
-    - target: {fileID: 4479371990158722628, guid: 5a2fed211c5e56144aaa4dc696735b26, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.045
-      objectReference: {fileID: 0}
-    - target: {fileID: 4479371990158722628, guid: 5a2fed211c5e56144aaa4dc696735b26, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.05
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a2fed211c5e56144aaa4dc696735b26, type: 3}
---- !u!1 &2341823275358575937 stripped
+--- !u!1 &102649810342955940 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2357651326512695971, guid: 5a2fed211c5e56144aaa4dc696735b26, type: 3}
-  m_PrefabInstance: {fileID: 56256234796996578}
+  m_PrefabInstance: {fileID: 2437749317696766215}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1653142913668884677 stripped
+--- !u!4 &4026877848127913504 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1600739430808289063, guid: 5a2fed211c5e56144aaa4dc696735b26, type: 3}
-  m_PrefabInstance: {fileID: 56256234796996578}
+  m_PrefabInstance: {fileID: 2437749317696766215}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6094987973374198819
 PrefabInstance:
