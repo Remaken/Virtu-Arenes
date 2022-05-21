@@ -767,6 +767,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6149909750941619145, guid: 6f5937e1aafe76748bd850232d0e346e, type: 3}
   m_PrefabInstance: {fileID: 1712204586}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &265665990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265665989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c961db535eef0545944dd601c932f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grab: {fileID: 0}
+  sword: {fileID: 0}
+  swordSpaceSettings: {x: 0, y: 0, z: 0}
 --- !u!1001 &391549436
 PrefabInstance:
   m_ObjectHideFlags: 0
