@@ -73,8 +73,8 @@ public class Object_Interaction : MonoBehaviour
         {
             isSelected = false;
             
-            gameObject.GetComponent<Rigidbody>().isKinematic = false;   //drop the sword with gravity enabled
-            gameObject.GetComponent<Rigidbody>().useGravity = true;
+            //gameObject.GetComponent<Rigidbody>().isKinematic = false;   //drop the sword with gravity enabled
+            //gameObject.GetComponent<Rigidbody>().useGravity = true;
         }
         
 
