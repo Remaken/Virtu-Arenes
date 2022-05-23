@@ -14,6 +14,9 @@ public class Object_Interaction : MonoBehaviour
     
     public bool action = true;
     public bool isSelected = true;
+
+    public GameObject doorTrap;
+    public bool isClosed = false;
    
     
     
@@ -34,6 +37,7 @@ public class Object_Interaction : MonoBehaviour
     {
         action = false;
         isSelected = false;
+        isClosed = false;
 
     }
 
@@ -41,7 +45,6 @@ public class Object_Interaction : MonoBehaviour
     {
         //SwordPosition(SelectEnterEventArgs args);
         
-       
     }
     
     public void StartSelect(SelectEnterEventArgs args)
@@ -49,11 +52,14 @@ public class Object_Interaction : MonoBehaviour
         
         action = true;
         
+        
         if (action)
         {
             args.interactableObject.transform.position = args.interactorObject.transform.position + swordSpaceSettings;
             
             isSelected = true;
+            doorTrap.SetActive(true);
+            
         }
         
 
@@ -67,8 +73,8 @@ public class Object_Interaction : MonoBehaviour
         {
             isSelected = false;
             
-            //gameObject.GetComponent<Rigidbody>().isKinematic = false;   //drop the sword with gravity enabled
-            //gameObject.GetComponent<Rigidbody>().useGravity = true;
+            gameObject.GetComponent<Rigidbody>().isKinematic = false;   //drop the sword with gravity enabled
+            gameObject.GetComponent<Rigidbody>().useGravity = true;
         }
         
 
