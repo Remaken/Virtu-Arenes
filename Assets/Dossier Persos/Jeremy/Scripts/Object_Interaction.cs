@@ -55,10 +55,11 @@ public class Object_Interaction : MonoBehaviour
         
         if (action)
         {
-            args.interactableObject.transform.position = args.interactorObject.transform.position + swordSpaceSettings;
+            //args.interactableObject.transform.position = args.interactorObject.transform.position + swordSpaceSettings;
             
             isSelected = true;
-            doorTrap.SetActive(true);
+            Debug.Log("Sword taken");
+            //doorTrap.SetActive(true);
             
         }
         
@@ -73,6 +74,7 @@ public class Object_Interaction : MonoBehaviour
         {
             isSelected = false;
             
+            Debug.Log("Sword released");
             //gameObject.GetComponent<Rigidbody>().isKinematic = false;   //drop the sword with gravity enabled
             //gameObject.GetComponent<Rigidbody>().useGravity = true;
         }
