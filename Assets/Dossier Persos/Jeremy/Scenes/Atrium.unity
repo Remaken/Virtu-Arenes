@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 65659013}
   - component: {fileID: 65659012}
   - component: {fileID: 65659011}
+  - component: {fileID: 65659015}
   - component: {fileID: 65659010}
   m_Layer: 0
   m_Name: Snap_sword_zone
@@ -270,6 +271,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &65659015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65659009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba57a74336429514db9380c81e01a3dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snap: {fileID: 65659010}
+  doorTrap: {fileID: 1128428381}
+  snapOn: 1
 --- !u!1 &125661084 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 143668, guid: e6ba3498ffa1e534b91a07264266e6b8, type: 3}
@@ -318,7 +334,6 @@ GameObject:
   - component: {fileID: 138535908}
   - component: {fileID: 138535907}
   - component: {fileID: 138535906}
-  - component: {fileID: 138535905}
   - component: {fileID: 138535911}
   - component: {fileID: 138535910}
   m_Layer: 0
@@ -328,19 +343,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &138535905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 138535904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67ea0ef7e0887f74e9ce66a8184304d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  doorTrap: {fileID: 1128428381}
 --- !u!136 &138535906
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2129,7 +2131,7 @@ GameObject:
   - component: {fileID: 482131691}
   m_Layer: 0
   m_Name: XR Origin
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2235,6 +2237,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Timeout: 10
   m_XROrigin: {fileID: 482131689}
+--- !u!1 &482427157 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4983974777901931985, guid: fa67d30e3354dac4fa1270f89ee03821, type: 3}
+  m_PrefabInstance: {fileID: 2373184715194122782}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &482427164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482427157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6cfc68b0593ad47a9716cb5308243c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _DmMecanism: {fileID: 1234359224}
+  _ObjectInteraction: {fileID: 0}
 --- !u!1 &496147358 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4366355778003614092, guid: fa67d30e3354dac4fa1270f89ee03821, type: 3}
@@ -3461,7 +3482,7 @@ GameObject:
   - component: {fileID: 959336486}
   - component: {fileID: 959336487}
   m_Layer: 0
-  m_Name: Sword_piedestal_snap
+  m_Name: Sword_Snap_on_side
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4080,6 +4101,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1234359223
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1234359225}
+  - component: {fileID: 1234359224}
+  m_Layer: 0
+  m_Name: DoorMecanism_sc
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1234359224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234359223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67ea0ef7e0887f74e9ce66a8184304d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorTrap: {fileID: 1128428381}
+--- !u!4 &1234359225
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234359223}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.17414397, y: 2.3255692, z: -23.811016}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1280468046
 GameObject:
   m_ObjectHideFlags: 0
@@ -4672,7 +4737,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1178254174057508446, guid: 6f5937e1aafe76748bd850232d0e346e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.87
+      value: 2.353
       objectReference: {fileID: 0}
     - target: {fileID: 1178254174057508446, guid: 6f5937e1aafe76748bd850232d0e346e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5899,6 +5964,14 @@ PrefabInstance:
     - target: {fileID: 2373184715611040976, guid: fa67d30e3354dac4fa1270f89ee03821, type: 3}
       propertyPath: m_TagString
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 4983974777901931985, guid: fa67d30e3354dac4fa1270f89ee03821, type: 3}
+      propertyPath: m_TagString
+      value: SpawnGround
+      objectReference: {fileID: 0}
+    - target: {fileID: 4983974777901931998, guid: fa67d30e3354dac4fa1270f89ee03821, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7348995397890318391, guid: fa67d30e3354dac4fa1270f89ee03821, type: 3}
       propertyPath: m_RootOrder

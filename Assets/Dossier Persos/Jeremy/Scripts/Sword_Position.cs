@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class Object_Interaction : MonoBehaviour
+public class Sword_Position : MonoBehaviour
 {
     [SerializeField] XRGrabInteractable grab;
     
@@ -55,14 +55,12 @@ public class Object_Interaction : MonoBehaviour
         
         if (action)
         {
-            args.interactableObject.transform.position = args.interactorObject.transform.position + swordSpaceSettings;
+            //args.interactableObject.transform.position = args.interactorObject.transform.position + swordSpaceSettings;
             
             isSelected = true;
-            doorTrap.SetActive(true);
             
         }
         
-
     }
     
     public void StopSelect(SelectExitEventArgs args)
@@ -73,12 +71,7 @@ public class Object_Interaction : MonoBehaviour
         {
             isSelected = false;
             
-            //gameObject.GetComponent<Rigidbody>().isKinematic = false;   //drop the sword with gravity enabled
-            //gameObject.GetComponent<Rigidbody>().useGravity = true;
         }
-        
-
-        
         
     }
     
