@@ -2254,8 +2254,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a6cfc68b0593ad47a9716cb5308243c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _DmMecanism: {fileID: 1234359224}
-  _ObjectInteraction: {fileID: 0}
 --- !u!1 &496147358 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4366355778003614092, guid: fa67d30e3354dac4fa1270f89ee03821, type: 3}
@@ -4118,11 +4116,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 65de8d3e6a94e3e4f84d153c423f2c8a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.22
+      value: 6.205
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 65de8d3e6a94e3e4f84d153c423f2c8a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.155
+      value: -0.905
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 65de8d3e6a94e3e4f84d153c423f2c8a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5512,6 +5510,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Projet Architectures Atrium 5
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9717e3031fb702c4dac4decfcde73253, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9717e3031fb702c4dac4decfcde73253, type: 3}
 --- !u!1 &1978659800 stripped
@@ -5859,15 +5861,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3659395926253179748, guid: 13eae18eef0f5b74ea6d0290c3d7c618, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3659395926253179748, guid: 13eae18eef0f5b74ea6d0290c3d7c618, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3659395926253179748, guid: 13eae18eef0f5b74ea6d0290c3d7c618, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3659395926253179748, guid: 13eae18eef0f5b74ea6d0290c3d7c618, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6102,6 +6104,10 @@ PrefabInstance:
     - target: {fileID: 4983974777901931985, guid: fa67d30e3354dac4fa1270f89ee03821, type: 3}
       propertyPath: m_TagString
       value: SpawnGround
+      objectReference: {fileID: 0}
+    - target: {fileID: 4983974777901931998, guid: fa67d30e3354dac4fa1270f89ee03821, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4983974777901931998, guid: fa67d30e3354dac4fa1270f89ee03821, type: 3}
       propertyPath: m_IsTrigger
