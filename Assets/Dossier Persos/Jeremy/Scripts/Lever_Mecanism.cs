@@ -8,7 +8,7 @@ public class Lever_Mecanism : MonoBehaviour
 {
     public GameObject sword;
     
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)     //fait apparaitre l'épée dans son socle
     {
         if (other.gameObject.CompareTag("Poignee"))
         {

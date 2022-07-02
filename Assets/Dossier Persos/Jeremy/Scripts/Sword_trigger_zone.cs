@@ -7,7 +7,6 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class Sword_trigger_zone : MonoBehaviour
 {
 
-    public GameObject originalSword;
     public GameObject swordPlaced;
     
     
@@ -16,7 +15,6 @@ public class Sword_trigger_zone : MonoBehaviour
         if (other.gameObject.CompareTag("Epee"))
         {
             Debug.Log("Sword is in the box");
-            //originalSword.SetActive(false);
             swordPlaced.SetActive(true);
             
         }
